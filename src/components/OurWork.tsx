@@ -82,7 +82,9 @@ const OurWork = () => {
                 className="flex flex-col rounded-[10px] flex-shrink-0 cursor-pointer bg-surface relative w-[350px] md:w-[400px]"
                 style={{ minHeight: "350px", padding: "20px", gap: "20px", scrollSnapAlign: "start" }}
               >
-                <div className="rounded-[10px] h-[200px] w-full bg-placeholder" />
+                <div className="rounded-[10px] h-[200px] w-full bg-placeholder relative overflow-hidden">
+                  {project.image && <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />}
+                </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="font-medium text-xl text-foreground">{project.title}</h3>
                   <p className="text-[16px] md:text-[14px] text-foreground/50 leading-relaxed">{project.description}</p>
@@ -130,8 +132,8 @@ const OurWork = () => {
           {canScrollLeft && (
             <button
               onClick={scrollLeft}
-              className="absolute top-1/2 hidden md:flex items-center justify-center bg-surface border border-stroke/10"
-              style={{ left: "-20px", transform: "translateY(-50%)", width: "40px", height: "40px", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 8px hsl(var(--stroke) / 0.1)" }}
+              className="absolute top-1/2 flex items-center justify-center bg-surface border border-stroke/10 left-0 md:-left-[20px]"
+              style={{ transform: "translateY(-50%)", width: "40px", height: "40px", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 8px hsl(var(--stroke) / 0.1)", zIndex: 10 }}
             >
               <ChevronLeft size={20} className="text-foreground" />
             </button>
@@ -139,8 +141,8 @@ const OurWork = () => {
           {canScrollRight && (
             <button
               onClick={scrollRight}
-              className="absolute top-1/2 hidden md:flex items-center justify-center bg-surface border border-stroke/10"
-              style={{ right: "-20px", transform: "translateY(-50%)", width: "40px", height: "40px", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 8px hsl(var(--stroke) / 0.1)" }}
+              className="absolute top-1/2 flex items-center justify-center bg-surface border border-stroke/10 right-0 md:-right-[20px]"
+              style={{ transform: "translateY(-50%)", width: "40px", height: "40px", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 8px hsl(var(--stroke) / 0.1)", zIndex: 10 }}
             >
               <ChevronRight size={20} className="text-foreground" />
             </button>

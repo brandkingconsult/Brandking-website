@@ -11,6 +11,7 @@ const SERVICES = [
     subtitle: "Clarity and consistency that builds trust;",
     paragraph: "We define your brand's identity, visual language, and message; so your business is instantly recognizable and confidently positioned across every touchpoint.",
     mediaPosition: "right" as const,
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
   },
   {
     number: 2,
@@ -19,6 +20,7 @@ const SERVICES = [
     subtitle: "Digital experiences designed to convert;",
     paragraph: "We design and build websites that don't just look good, but guide users, build credibility, and turn attention into action.",
     mediaPosition: "left" as const,
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
   },
   {
     number: 3,
@@ -27,6 +29,7 @@ const SERVICES = [
     subtitle: "Visual content that tells your story;",
     paragraph: "We create high-quality visual content that captures attention, communicates value, and reinforces your brand's credibility across platforms.",
     mediaPosition: "right" as const,
+    image: "https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?auto=format&fit=crop&q=80&w=800",
   },
   {
     number: 4,
@@ -35,10 +38,11 @@ const SERVICES = [
     subtitle: "Consistent presence with clear direction;",
     paragraph: "We manage and grow your social media with strategy-led content that strengthens your brand voice and keeps you visible where your audience already is.",
     mediaPosition: "left" as const,
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
-const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition }: (typeof SERVICES)[number]) => {
+const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition, image }: (typeof SERVICES)[number]) => {
   const navigate = useNavigate();
   const { open } = useContactPopup();
 
@@ -82,19 +86,16 @@ const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition 
 
   const mediaPlaceholder = (
     <div
-      className="rounded-[10px] w-full lg:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-1"
-    />
+      className="rounded-[10px] w-full lg:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-shrink-0 lg:flex-shrink lg:flex-1 relative overflow-hidden"
+    >
+      <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+    </div>
   );
 
   return (
-    <div className="flex flex-col lg:flex-row w-full items-center gap-[20px] lg:gap-[30px] max-w-[1400px]">
-      {mediaPosition === "right" ? (
-        <>{leftContent}{mediaPlaceholder}</>
-      ) : (
-        <div className="flex flex-col-reverse lg:flex-row w-full items-center gap-[20px] lg:gap-[30px]">
-          {mediaPlaceholder}{leftContent}
-        </div>
-      )}
+    <div className={`flex flex-col ${mediaPosition === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} w-full items-center gap-[20px] lg:gap-[30px] max-w-[1400px]`}>
+      {mediaPlaceholder}
+      {leftContent}
     </div>
   );
 };

@@ -128,11 +128,21 @@ const PortfolioDetail = () => {
 
           {/* 3x2 Grid */}
           <div className="grid gap-5 mt-[30px] max-w-[1200px]" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridAutoRows: "299px" }}>
-            <div className="rounded-[10px] bg-placeholder row-span-2 hidden md:block" style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }} />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
+            <div className="rounded-[10px] bg-placeholder row-span-2 hidden md:block relative overflow-hidden" style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }}>
+              {project.image && <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />}
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&q=80&w=800" alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
           </div>
 
           {/* Description stack */}

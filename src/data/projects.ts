@@ -9,6 +9,7 @@ export interface ProjectData {
   role: string;
   roleDetails: { label: string; text: string }[];
   liveUrl?: string;
+  image?: string;
 }
 
 export const PROJECTS: ProjectData[] = [
@@ -25,6 +26,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Branding & visual identity", text: "creating a clean, professional look that reflects trust and clarity" },
       { label: "Website design & development", text: "structuring the platform to feel intuitive, credible, and easy to use" },
     ],
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "rockview-hotel",
@@ -39,6 +41,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Branding & visual identity", text: "modernizing the hotel's look to feel premium and inviting" },
       { label: "Photography & video", text: "showcasing the property with professional visual content" },
     ],
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "discover",
@@ -53,6 +56,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Website design & development", text: "creating a unified digital hub for all their services" },
       { label: "Social media management", text: "establishing a consistent voice across platforms" },
     ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "bloom-studio",
@@ -68,6 +72,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Photography & video", text: "documenting their creative process and portfolio" },
       { label: "Social media management", text: "showcasing their work consistently online" },
     ],
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "novapay",
@@ -83,6 +88,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Website design & development", text: "building a conversion-focused product website" },
       { label: "Social media management", text: "growing awareness in the fintech community" },
     ],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "terra-foods",
@@ -97,6 +103,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Branding & visual identity", text: "creating an earthy, purpose-driven visual identity" },
       { label: "Photography & video", text: "capturing the story behind their sustainable practices" },
     ],
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "arc-fitness",
@@ -112,6 +119,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Website design & development", text: "creating an immersive membership-focused website" },
       { label: "Photography & video", text: "capturing the intensity and community of the gym" },
     ],
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "pulse-agency",
@@ -126,6 +134,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Branding & visual identity", text: "refining their brand for enterprise credibility" },
       { label: "Website design & development", text: "building a portfolio site that impresses decision-makers" },
     ],
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "zenith-labs",
@@ -141,6 +150,7 @@ export const PROJECTS: ProjectData[] = [
       { label: "Website design & development", text: "making complex information accessible and engaging" },
       { label: "Social media management", text: "building thought leadership in the biotech space" },
     ],
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800",
   },
 ];
 

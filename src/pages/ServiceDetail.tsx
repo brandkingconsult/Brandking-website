@@ -64,11 +64,21 @@ const ServiceDetail = () => {
 
           {/* 3x2 Grid */}
           <div className="grid gap-5 mt-[30px] max-w-[1200px]" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridAutoRows: "299px" }}>
-            <div className="rounded-[10px] bg-placeholder row-span-2 hidden md:block" style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }} />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
-            <div className="rounded-[10px] bg-placeholder" />
+            <div className="rounded-[10px] bg-placeholder row-span-2 hidden md:block relative overflow-hidden" style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }}>
+               <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&q=80&w=800" alt="Process" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Strategy" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Collab" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Design" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="rounded-[10px] bg-placeholder relative overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="Team" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
           </div>
 
           {/* Description stack */}
@@ -139,7 +149,9 @@ const ServiceDetail = () => {
                     className="flex flex-col rounded-[10px] flex-shrink-0 cursor-pointer bg-surface"
                     style={{ width: "300px", minHeight: "350px", padding: "20px", gap: "20px" }}
                   >
-                    <div className="rounded-[10px] h-[200px] w-full bg-placeholder" />
+                    <div className="rounded-[10px] h-[200px] w-full bg-placeholder relative overflow-hidden">
+                      {project.image && <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />}
+                    </div>
                     <div className="flex flex-col gap-2">
                       <h3 className="font-medium text-xl text-foreground">{project.title}</h3>
                       <p className="text-sm text-foreground/50 leading-relaxed">{project.description}</p>
