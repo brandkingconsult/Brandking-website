@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { Container } from "./Container";
 
 const BANNER_TEXT = "We believe strong brands are built on clarity, not noise.\nWhen strategy, design, and storytelling work together,\nbrands don't just look good — they earn trust and drive growth.\n\nThat's what we build at Brand King.";
 
@@ -31,11 +32,10 @@ const CTABanner = () => {
   const filledCount = Math.round(progress * chars.length);
 
   return (
-    <section className="mt-[150px] px-5 md:px-[40px] w-full">
-      <div
+    <section className="mt-[150px] w-full">
+      <Container
         ref={textRef}
-        className="mx-auto rounded-[10px] flex flex-col items-center justify-center"
-        style={{ maxWidth: "1400px", padding: "40px", backgroundColor: "#1B1B1B", width: "100%" }}
+        className="rounded-[10px] flex flex-col items-center justify-center p-[40px] bg-[#1B1B1B]"
       >
         <div className="flex flex-col items-center gap-5 w-full">
           <div className="px-5 py-2 border-2 border-white/20 rounded-full text-white/30 text-base">
@@ -64,7 +64,7 @@ const CTABanner = () => {
             </button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

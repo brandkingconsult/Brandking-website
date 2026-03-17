@@ -109,7 +109,7 @@ const Index = () => {
     <div className="bg-background">
       <section
         id="hero"
-        className="flex flex-col w-full h-screen pl-[20px] pr-0 py-[20px] md:p-[40px] overflow-hidden"
+        className="flex flex-col w-full h-screen pl-[20px] pr-0 py-[20px] md:p-[40px]"
       >
         <Navbar />
         {/* Spacer for fixed navbar */}
@@ -133,7 +133,7 @@ const Index = () => {
       <div className="w-full">
         <TheOntro />
       </div>
-      <div className="p-[20px] md:p-[40px] lg:p-[100px]">
+      <div className="w-full">
         <TheProblem />
         <TheSolution />
         <OurProcess />

@@ -6,6 +6,7 @@ import { PROJECTS } from "@/data/projects";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Container } from "@/components/Container";
 
 const SERVICE_ICONS = [Palette, Globe, Video, Share2];
 
@@ -23,10 +24,10 @@ const ServiceDetail = () => {
     return (
       <div className="bg-background min-h-screen">
         <Navbar />
-        <div className="pt-[120px] px-5 md:px-[40px] text-center">
+        <Container className="pt-[120px] text-center">
           <h1 className="text-[40px] text-foreground">Service not found</h1>
           <button onClick={() => navigate("/")} className="mt-5 text-primary">← Back to home</button>
-        </div>
+        </Container>
       </div>
     );
   }
@@ -38,7 +39,7 @@ const ServiceDetail = () => {
     <div className="bg-background min-h-screen">
       <Navbar />
       <div style={{ paddingTop: "80px" }}>
-        <div className="mx-auto max-w-[1400px] px-5 md:px-[40px]">
+        <Container>
           {/* Back link */}
           <button
             onClick={() => navigate("/")}
@@ -170,7 +171,7 @@ const ServiceDetail = () => {
               Start a conversation
             </button>
           </div>
-        </div>
+        </Container>
         <Footer />
       </div>
       <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>

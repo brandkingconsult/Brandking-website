@@ -63,20 +63,20 @@ const HeroCard = ({ cardId, active = false, shrinking = false, className = "", a
           }}
         >
           <div
-            className={`h-full flex flex-col justify-between w-full min-w-max md:min-w-[800px] ${shrinking
-              ? "opacity-0 -translate-x-[40px]"
+            style={{
+              transition: "opacity var(--fade-duration, 1200ms) cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1)",
+            } as React.CSSProperties}
+            className={`h-full flex flex-col justify-between w-full min-w-0 md:min-w-[800px] ${shrinking
+              ? "opacity-0 -translate-x-[40px] max-md:[--fade-duration:150ms]"
               : mounted
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-[40px]"
               }`}
-            style={{
-              transition: "opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1)"
-            }}
           >
             <div className="w-full">
               <div className="flex flex-col gap-2 w-full">
                 <h1
-                  className="text-muted font-semibold leading-[1] whitespace-pre-line text-[70px] md:text-[120px]"
+                  className="text-muted font-semibold leading-[1] whitespace-pre-wrap md:whitespace-pre-line break-words md:break-normal text-[70px] md:text-[120px]"
                 >
                   {content.heading}
                 </h1>

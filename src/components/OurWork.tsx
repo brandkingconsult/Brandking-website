@@ -3,6 +3,7 @@ import { ChevronRight, ChevronLeft, Palette, Globe, Video, Share2 } from "lucide
 import { useNavigate } from "react-router-dom";
 import { PROJECTS } from "@/data/projects";
 import { SERVICES } from "@/data/services";
+import { Container } from "./Container";
 
 const SERVICE_ICONS = [Palette, Globe, Video, Share2];
 
@@ -40,8 +41,8 @@ const OurWork = () => {
   };
 
   return (
-    <section id="portfolio" className="mt-[150px] py-[80px] px-5 md:px-[40px] w-full">
-      <div className="flex flex-col mx-auto gap-[30px] max-w-[1400px]">
+    <section id="portfolio" className="mt-[150px] py-[80px] w-full">
+      <Container className="flex flex-col gap-[30px]">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
           <div className="flex flex-col gap-5">
@@ -71,15 +72,15 @@ const OurWork = () => {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-5 overflow-x-auto scrollbar-hide"
+            className="flex gap-[20px] overflow-x-auto scrollbar-hide pt-[100px] -mt-[100px] pb-[40px] -mb-[40px]"
             style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none", msOverflowStyle: "none", paddingRight: "80px" }}
           >
             {PROJECTS.slice(0, 5).map((project, pi) => (
               <div
                 key={pi}
                 onClick={() => navigate(`/portfolio/${project.slug}`)}
-                className="flex flex-col rounded-[10px] flex-shrink-0 cursor-pointer bg-surface"
-                style={{ width: "300px", minHeight: "350px", padding: "20px", gap: "20px", scrollSnapAlign: "start" }}
+                className="flex flex-col rounded-[10px] flex-shrink-0 cursor-pointer bg-surface relative w-[350px] md:w-[400px]"
+                style={{ minHeight: "350px", padding: "20px", gap: "20px", scrollSnapAlign: "start" }}
               >
                 <div className="rounded-[10px] h-[200px] w-full bg-placeholder" />
                 <div className="flex flex-col gap-2">
@@ -145,7 +146,7 @@ const OurWork = () => {
             </button>
           )}
         </div>
-      </div>
+      </Container>
       <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>
     </section>
   );

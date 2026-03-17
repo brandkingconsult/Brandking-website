@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Container } from "./Container";
 
 const MEMBERS = [
   { name: "Ethan Roberts", role: "Creative Director" },
@@ -42,8 +43,8 @@ const TheTeam = () => {
   }, [activeIndex, transitioning]);
 
   return (
-    <section id="team" className="mt-[150px] py-[80px] px-5 md:px-[40px] w-full">
-      <div className="flex flex-col items-center mx-auto gap-[30px] max-w-[1400px]">
+    <section id="team" className="mt-[150px] py-[80px] w-full">
+      <Container className="flex flex-col items-center gap-[30px]">
         <div className="flex flex-col items-center gap-5">
           <div className="px-5 py-2 border-2 border-stroke/10 rounded-full text-foreground/30 text-base">
             Our Team
@@ -94,7 +95,7 @@ const TheTeam = () => {
             );
           })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Container } from "./Container";
 
 const PARAGRAPH_TEXT =
   "Most brands struggle to stand out — not because they lack quality, but because they lack clarity";
@@ -30,8 +31,8 @@ const TheOntro = () => {
   const filledCount = Math.round(progress * chars.length);
 
   return (
-    <section className="mt-[150px] py-[80px] px-5 md:px-20 bg-surface w-full">
-      <div className="flex flex-col md:flex-row items-stretch justify-center mx-auto max-w-[1200px] gap-10">
+    <section className="mt-[150px] py-[80px] bg-surface w-full">
+      <Container className="flex flex-col md:flex-row items-stretch justify-center max-w-[1200px] gap-10">
         {/* Left stack */}
         <div className="flex flex-col">
           <span className="font-medium text-xl text-primary">DID YOU KNOW?</span>
@@ -44,7 +45,7 @@ const TheOntro = () => {
           </div>
         </div>
         {/* Divider */}
-        <div className="hidden md:block self-stretch w-[1.5px] bg-stroke/10" />
+        <div className="w-full h-[1.5px] md:w-[1.5px] md:h-auto self-stretch bg-stroke/10" />
         {/* Right stack */}
         <div ref={paragraphRef} className="flex items-center md:w-[585px] min-h-[208px]">
           <p className="text-[24px] md:text-[32px] leading-relaxed">
@@ -55,7 +56,7 @@ const TheOntro = () => {
             ))}
           </p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

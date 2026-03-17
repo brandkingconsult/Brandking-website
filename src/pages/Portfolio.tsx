@@ -5,6 +5,7 @@ import { PROJECTS } from "@/data/projects";
 import { SERVICES } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Container } from "@/components/Container";
 
 const SERVICE_ICONS = [Palette, Globe, Video, Share2];
 
@@ -39,7 +40,7 @@ const Portfolio = () => {
     <div className="bg-background min-h-screen">
       <Navbar />
       <div style={{ paddingTop: "80px" }}>
-        <div className="mx-auto max-w-[1400px] px-5 md:px-[40px]">
+        <Container>
           {/* Back to home */}
           <button
             onClick={() => navigate("/")}
@@ -121,7 +122,7 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
         <Footer />
       </div>
     </div>

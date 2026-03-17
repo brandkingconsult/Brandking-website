@@ -1,11 +1,12 @@
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { Container } from "./Container";
 
 const WhyChooseUs = () => {
   const { open } = useContactPopup();
 
   return (
-    <section className="mt-[150px] py-[80px] px-5 md:px-[40px] w-full">
-      <div className="flex flex-col items-center mx-auto gap-[30px] max-w-[1400px]">
+    <section className="mt-[150px] py-[80px] w-full">
+      <Container className="flex flex-col items-center gap-[30px]">
         {/* Top stack */}
         <div className="flex flex-col items-center gap-5">
           <div className="px-5 py-2 border-2 border-stroke/10 rounded-full text-foreground/30 text-base">
@@ -68,7 +69,7 @@ const WhyChooseUs = () => {
             <div className="rounded-[10px] flex-1 w-full md:h-full h-[150px] bg-placeholder" />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import brandkingLogo from "@/assets/brandking-logo.svg";
 import brandkingFooter from "@/assets/brandking-footer.svg";
+import { Container } from "./Container";
 
 const FOOTER_LINKS = {
   Company: ["FAQ", "Services", "Insights", "Team"],
@@ -24,9 +25,9 @@ const Footer = () => {
 
   return (
     <footer className="mt-[150px] w-full">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-[40px]">
+      <Container>
         {/* Top row */}
-        <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-stroke/10 gap-10">
+        <div className="flex flex-col lg:flex-row justify-between pb-10 border-b border-stroke/10 gap-10">
           <div className="flex flex-col gap-4 max-w-[300px]">
             <div className="flex items-center gap-2">
               <img
@@ -55,7 +56,7 @@ const Footer = () => {
           </div>
 
           {/* Desktop links */}
-          <div className="hidden md:flex gap-[60px]">
+          <div className="hidden lg:flex gap-[60px]">
             {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
               <div key={heading} className="flex flex-col gap-3">
                 <h4 className="font-semibold text-base text-foreground">{heading}</h4>
@@ -73,7 +74,7 @@ const Footer = () => {
           </div>
 
           {/* Mobile accordion links */}
-          <div className="flex flex-col md:hidden gap-0">
+          <div className="flex flex-col lg:hidden gap-0">
             {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
               <div key={heading} className="border-b border-stroke/10">
                 <button
@@ -109,7 +110,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between py-5 gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between py-5 gap-4">
           <p className="text-xs text-foreground/30">© 2025 Brand King Inc. All rights reserved.</p>
           <div className="flex gap-5">
             {["Terms of Service", "Privacy Policy", "Cookies"].map((t) => (
@@ -126,7 +127,7 @@ const Footer = () => {
             className="w-full h-auto dark:invert"
           />
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

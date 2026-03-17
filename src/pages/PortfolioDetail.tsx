@@ -10,6 +10,7 @@ import searchIcon from "@/assets/search-icon.svg";
 import brainIcon from "@/assets/brain-icon.svg";
 import designBuildIcon from "@/assets/design-build-icon.svg";
 import rocketIcon from "@/assets/rocket-icon.svg";
+import { Container } from "@/components/Container";
 
 const SERVICE_ICONS = [Palette, Globe, Video, Share2];
 
@@ -69,10 +70,10 @@ const PortfolioDetail = () => {
     return (
       <div className="bg-background min-h-screen">
         <Navbar />
-        <div className="pt-[120px] px-5 md:px-[40px] text-center">
+        <Container className="pt-[120px] text-center">
           <h1 className="text-[40px] text-foreground">Project not found</h1>
           <button onClick={() => navigate("/portfolio")} className="mt-5 text-primary text-[16px] md:text-[14px]" style={{ padding: "12px 16px" }}>← Back to Projects</button>
-        </div>
+        </Container>
       </div>
     );
   }
@@ -81,7 +82,7 @@ const PortfolioDetail = () => {
     <div className="bg-background min-h-screen">
       <Navbar />
       <div style={{ paddingTop: "80px" }}>
-        <div className="mx-auto max-w-[1400px] px-5 md:px-[40px]">
+        <Container>
           {/* Back link */}
           <button
             onClick={() => navigate("/portfolio")}
@@ -239,7 +240,7 @@ const PortfolioDetail = () => {
               Start a project like this
             </button>
           </div>
-        </div>
+        </Container>
         <Footer />
       </div>
     </div>

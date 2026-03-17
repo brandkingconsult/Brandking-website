@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useContactPopup } from "@/contexts/ContactPopupContext";
+import { Container } from "./Container";
 
 const SERVICES = [
   {
@@ -42,7 +43,7 @@ const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition 
   const { open } = useContactPopup();
 
   const leftContent = (
-    <div className="flex flex-col justify-center w-full md:w-[550px]" style={{ gap: "30px", flexShrink: 0 }}>
+    <div className="flex flex-col justify-center w-full lg:w-[550px]" style={{ gap: "30px", flexShrink: 0 }}>
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4">
           <div
@@ -81,16 +82,16 @@ const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition 
 
   const mediaPlaceholder = (
     <div
-      className="rounded-[10px] w-full md:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-1"
+      className="rounded-[10px] w-full lg:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-1"
     />
   );
 
   return (
-    <div className="flex flex-col md:flex-row w-full items-center gap-[30px] max-w-[1400px]">
+    <div className="flex flex-col lg:flex-row w-full items-center gap-[20px] lg:gap-[30px] max-w-[1400px]">
       {mediaPosition === "right" ? (
         <>{leftContent}{mediaPlaceholder}</>
       ) : (
-        <div className="flex flex-col-reverse md:flex-row w-full items-center gap-[30px]">
+        <div className="flex flex-col-reverse lg:flex-row w-full items-center gap-[20px] lg:gap-[30px]">
           {mediaPlaceholder}{leftContent}
         </div>
       )}
@@ -100,8 +101,8 @@ const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition 
 
 const TheSolution = () => {
   return (
-    <section id="solutions" className="mt-[150px] py-[80px] px-5 md:px-[40px] w-full">
-      <div className="flex flex-col items-center mx-auto gap-[80px] max-w-[1400px]">
+    <section id="solutions" className="mt-[150px] py-[80px] w-full">
+      <Container className="flex flex-col items-center gap-[80px]">
         <div className="flex flex-col items-center gap-5">
           <div className="px-5 py-2 border-2 border-stroke/10 rounded-full text-foreground/30 text-base">
             The Solutions
@@ -121,7 +122,7 @@ const TheSolution = () => {
             <ServiceBlock key={index} {...service} />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
