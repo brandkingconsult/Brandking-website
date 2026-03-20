@@ -86,7 +86,7 @@ const ServiceBlock = ({ number, title, slug, subtitle, paragraph, mediaPosition,
 
   const mediaPlaceholder = (
     <div
-      className="rounded-[10px] w-full lg:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-shrink-0 lg:flex-shrink lg:flex-1 relative overflow-hidden"
+      className="rounded-[10px] w-full lg:max-w-[700px] h-[250px] md:h-[300px] bg-placeholder flex-shrink-0 lg:flex-shrink lg:flex-1 relative"
     >
       <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
     </div>

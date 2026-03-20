@@ -72,9 +72,18 @@ const OurWork = () => {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-[20px] overflow-x-auto scrollbar-hide pt-[100px] -mt-[100px] pb-[40px] -mb-[40px]"
-            style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none", msOverflowStyle: "none", paddingRight: "80px" }}
+            className="flex gap-[20px] overflow-x-auto scrollbar-hide pt-[100px] -mt-[100px] pb-[40px] -mb-[40px] w-[100vw] relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] [--work-pad:20px] md:[--work-pad:40px] lg:[--work-pad:80px]"
+            style={{ 
+              scrollSnapType: "x mandatory", 
+              scrollbarWidth: "none", 
+              msOverflowStyle: "none",
+              scrollPaddingLeft: "calc(50vw - min(50vw, 700px) + var(--work-pad))",
+              scrollPaddingRight: "calc(50vw - min(50vw, 700px) + var(--work-pad))"
+            }}
           >
+            {/* Left Spacer to align first card with Container padding */}
+            <div className="flex-shrink-0" style={{ width: "calc(50vw - min(50vw, 700px) + var(--work-pad) - 20px)" }} />
+
             {PROJECTS.slice(0, 5).map((project, pi) => (
               <div
                 key={pi}
@@ -82,7 +91,7 @@ const OurWork = () => {
                 className="flex flex-col rounded-[10px] flex-shrink-0 cursor-pointer bg-surface relative w-[350px] md:w-[400px]"
                 style={{ minHeight: "350px", padding: "20px", gap: "20px", scrollSnapAlign: "start" }}
               >
-                <div className="rounded-[10px] h-[200px] w-full bg-placeholder relative overflow-hidden">
+                <div className="rounded-[10px] h-[200px] w-full bg-placeholder relative">
                   {project.image && <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />}
                 </div>
                 <div className="flex flex-col gap-2">
@@ -128,6 +137,9 @@ const OurWork = () => {
                 </div>
               </div>
             ))}
+
+            {/* Right Spacer to allow last card to align with Container padding */}
+            <div className="flex-shrink-0" style={{ width: "calc(50vw - min(50vw, 700px) + var(--work-pad) - 20px)" }} />
           </div>
           {canScrollLeft && (
             <button

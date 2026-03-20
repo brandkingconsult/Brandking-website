@@ -106,7 +106,7 @@ const Index = () => {
   }, [phase]);
 
   return (
-    <div className="bg-background">
+    <div className="bg-background overflow-x-hidden">
       <section
         id="hero"
         className="flex flex-col w-full h-screen pl-[20px] pr-0 py-[20px] md:p-[40px]"

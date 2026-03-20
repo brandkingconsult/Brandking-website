@@ -115,7 +115,7 @@ const TheTeam = () => {
                 key={i}
                 data-index={i}
                 onClick={() => handleCardClick(i)}
-                className={`relative overflow-hidden rounded-[10px] bg-placeholder ${isMobile ? "team-card-mobile snap-center flex-shrink-0" : ""}`}
+                className={`relative rounded-[10px] bg-placeholder ${isMobile ? "team-card-mobile snap-center flex-shrink-0" : ""}`}
                 style={
                   isMobile
                     ? {

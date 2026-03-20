@@ -105,7 +105,7 @@ const OurProcess = () => {
               })}
             </div>
             {/* Vertical progress bar */}
-            <div className="w-1 bg-stroke/5 rounded-sm relative overflow-hidden flex-shrink-0" style={{ alignSelf: "stretch" }}>
+            <div className="w-1 bg-stroke/5 rounded-sm relative flex-shrink-0" style={{ alignSelf: "stretch" }}>
               <div className="absolute top-0 left-0 w-full bg-primary rounded-sm" style={{ height: `${progress * 100}%`, transition: "height 0.05s linear" }} />
             </div>
           </div>
@@ -141,7 +141,7 @@ const OurProcess = () => {
                 );
               })}
             </div>
-            <div className="w-full h-1 bg-stroke/5 rounded-sm relative overflow-hidden">
+            <div className="w-full h-1 bg-stroke/5 rounded-sm relative">
               <div className="absolute top-0 left-0 h-full bg-primary rounded-sm" style={{ width: `${progress * 100}%`, transition: "width 0.05s linear" }} />
             </div>
           </div>

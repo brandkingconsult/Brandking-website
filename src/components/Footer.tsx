@@ -89,7 +89,7 @@ const Footer = () => {
                   />
                 </button>
                 <div
-                  className="overflow-hidden transition-all duration-300"
+                  className="transition-all duration-300"
                   style={{ maxHeight: openSection === heading ? "300px" : "0px", opacity: openSection === heading ? 1 : 0 }}
                 >
                   <div className="flex flex-col gap-3 pb-4">
@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
 
         {/* BrandKing SVG */}
-        <div className="overflow-hidden pb-5 w-full">
+        <div className="pb-5 w-full">
           <img
             src={brandkingFooter}
             alt="BrandKing"
